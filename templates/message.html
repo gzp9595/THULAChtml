@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link href="css/GitHub2.css" rel="stylesheet">
+<script src="js/jquery-2.1.1.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>THULAC：一个高效的中文词法分析工具包</title>
+
+</head>
+<body>
+<h1>THULAC：一个高效的中文词法分析工具包</h1>
+</br>
+
+<h2>提交个人信息/Personal Information</h2>
+<p>以下带*部分必须填写(For * , you must complete the information.)
+为了更好的为您服务，请您认真填写以下信息，填写完毕后进入下载页面。该个人信息不会对外公开，请放心填写。</p>
+<form class="form-horizontal" action="/sendMessage" id="form_message" method="post" >
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="Name" class="col-sm-3 control-label">姓名/Name：</label>
+      <div class="col-sm-8">
+      <input name="name" class="form-control" id="name" placeholder="请输入您的姓名">
+      </div>
+      *
+    </div>
+    <div class="form-group">
+      <label for="OrgName" class="col-sm-3 control-label">工作单位/Organization：</label>
+      <div class="col-sm-8">
+      <input name="orgname" class="form-control" id="orgname" placeholder="请输入您所在机构">
+      </div>
+      *
+    </div>
+    <div class="form-group">
+      <label for="Email" class="col-sm-3 control-label">电子邮件/E-mail：</label>
+      <div class="col-sm-8">
+      <input name="email" class="form-control" id="email" placeholder="请输入您的邮箱">
+      </div>
+      *
+    </div>
+    <div class="form-group">
+      <label for="telephone" class="col-sm-3 control-label">联系电话/Telephone：</label>
+      <div class="col-sm-8">
+      <input name="telephone" class="form-control" id="telephone" placeholder="请输入您的联系电话（选填）">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="address" class="col-sm-3 control-label">通讯地址/Address：</label>
+      <div class="col-sm-8">
+      <input name="address" class="form-control" id="address" placeholder="请输入您的通讯地址（选填）">
+      </div>
+    </div>
+    <div class="form-group">
+    	<label for="name">THUNLP资源使用协议(License Agreement for the THUNLP source) *</label>
+    	<textarea class="form-control" rows="10" disabled="false">
+1、THULAC面向国内外大学、研究所、企业以及个人研究者免费开放源，但仅可用于非盈利目的。
+2、如有机构或个人拟将THULAC用于商业目的，请发邮件至thunlp@gmail.com洽谈技术许可协议。
+3、欢迎对该工具包的任何宝贵意见和建议，请发邮件至thunlp@gmail.com。
+4、如果您在THULAC基础上发表论文或取得科研成果，请您在发表论文和申报成果时声明“使用了清华大学THULAC”，并按如下格式引用： 中文： 孙茂松, 陈新雄, 郭志芃, 张开旭, 刘知远. THULAC：一个高效的中文词法分析工具包. 2016. 英文： Maosong Sun, Xinxiong Chen, Zhipeng Guo, Kaixu Zhang, Zhiyuan Liu. THULAC: An Efficient Lexical Analyzer for Chinese. 2016. 
+同时，发信给thunlp@gmail.com，说明发表论文或申报成果的题目、出处等。</textarea>
+  	</div>
+  	<div class="radio">
+  		<label>
+    	<input type="radio" name="optionsRadios" id="optionsRadios1" 
+        	 value="agree">同意并下载(agree and download)
+   		</label>
+	</div>
+	<div class="radio">
+    	<label>
+      		<input type="radio" name="optionsRadios" id="optionsRadios2" 
+         	value="disagree">
+         不同意(disagree)
+  		</label>
+	</div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-success btn-lg">提交</button>
+  </div>
+  </form>
+ <center>
+    版权所有：清华大学自然语言处理与社会人文计算实验室<br>Copyright：Natural Language Processing and Computational Social Science Lab, Tsinghua University<br>
+    <br>
+</center>
+</body>
+</html>
