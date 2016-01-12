@@ -3,6 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?7d726c33e1a2cbb37345e079aeca99e1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 <style>
 body {
   font-family: Helvetica, arial, sans-serif;
@@ -311,39 +320,40 @@ sup {
 <h2>目录</h2>
 
 <ul>
-<li>项目介绍</li>
-<li>编译和安装</li>
-<li>使用工具</li>
-<li>各类分词的性能对比</li>
-<li>词性解释</li>
-<li>THULAC模型介绍</li>
-<li>获取链接</li>
-<li>注意事项</li>
-<li>开源协议</li>
-<li>作者</li>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D">项目介绍</a></li>
+<li><a href="#%E7%BC%96%E8%AF%91%E5%92%8C%E5%AE%89%E8%A3%85">编译和安装</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8">使用</a></li>
+<li><a href="#%E4%BB%A3%E8%A1%A8%E5%88%86%E8%AF%8D%E8%BD%AF%E4%BB%B6%E7%9A%84%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94">代表分词软件的性能对比</a></li>
+<li><a href="#%E8%AF%8D%E6%80%A7%E8%A7%A3%E9%87%8A">词性解释</a></li>
+<li><a href="#THULAC%E6%A8%A1%E5%9E%8B%E4%BB%8B%E7%BB%8D">THULAC模型介绍</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96%E9%93%BE%E6%8E%A5">获取链接</a></li>
+<li><a href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">注意事项</a></li>
+<li><a href="#%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE">开源协议</a></li>
+<li><a href="#%E7%9B%B8%E5%85%B3%E8%AE%BA%E6%96%87">相关论文</a></li>
+<li><a href="#%E4%BD%9C%E8%80%85">作者</a></li>
 </ul>
 
 
-<h2>项目介绍</h2>
+<h2 id = "项目介绍">项目介绍</h2>
 
 <p>THULAC（THU Lexical Analyzer for Chinese）是由清华大学自然语言处理实验室推出的一套中文词法分析工具包，主要包括中文分词和词性标注功能。THULAC具有如下几个特点：</p>
 
 <ol>
 <li><p>算法新颖。该工具包使用了基于词图（word lattice）的重排序算法（re-ranking method），在分词、词性标注和重排序方面效率较高，性能较强。</p></li>
 <li><p>模型强大。我们按照统一标注规范整合多个分词、词性标注语料库，得到一份1500万字的分词、词性标注语料库（大小约300M）用于模型训练，模型标注能力强大。</p></li>
-<li><p>准确率高。该工具包在标准数据集Chinese Treebank(CTB5)上分词的F1值可达97.3％，词性标注的F1值可达到92.9％，与该数据集上最好方法效果相当。</p></li>
+<li><p>准确率高。该工具包在标准数据集Chinese Treebank（CTB5）上分词的F1值可达97.3％，词性标注的F1值可达到92.9％，与该数据集上最好方法效果相当。</p></li>
 <li><p>速度较快。该工具包的分词和词性标注速度为300KB/s，每秒可处理约15万字。仅进行分词速度可达到1.3MB/s。</p></li>
 </ol>
 
 
-<h2>编译和安装</h2>
+<h2 id = "编译和安装">编译和安装</h2>
 
 <pre><code>在当前路径下运行
 make
 会在当前目录下得到thulac和train_c
 </code></pre>
 
-<h2>使用:</h2>
+<h2 id = "使用">使用</h2>
 
 <h4>命令格式为：</h4>
 
@@ -362,77 +372,89 @@ make
 -model_dir dir      设置模型文件所在文件夹，默认为models/
 </code></pre>
 
-<h2>代表分词软件的性能对比</h2>
+<h2 id = "代表分词软件的性能对比">代表分词软件的性能对比</h2>
 
-<p>我们选择LTP、ICTCLAS等国内代表分词软件与THULAC做性能比较。我们选择Windows作为测试环境，根据第二届国际汉语分词测评发布的国际中文分词测评标准，对不同软件进行了速度和准确率测试。</p>
+<p>我们选择LTP、ICTCLAS、结巴分词等国内代表分词软件与THULAC做性能比较。我们选择Windows作为测试环境，根据第二届国际汉语分词测评发布的国际中文分词测评标准，对不同软件进行了速度和准确率测试。</p>
 
-<p>在第二届国际汉语分词测评中，共有四家单位提供的测试语料（Academia Sinica、 City University 、Peking University 、Microsoft Research）, 在评测提供的资源<a href="http://www.sighan.org/bakeoff2005/">icwb2-data</a>中包含了来自这四家单位的训练集(training)、测试集(testing), 以及根据各自分词标准而提供的相应测试集的标准答案（icwb2-data/scripts/gold）．在icwb2-data/scripts目录下含有对分词进行自动评分的perl脚本score。</p>
+<p>在第二届国际汉语分词测评中，共有四家单位提供的测试语料（Academia Sinica、 City University 、Peking University 、Microsoft Research）, 在评测提供的资源<a href="http://www.sighan.org/bakeoff2005/">icwb2-data</a>中包含了来自这四家单位的训练集（training）、测试集（testing）, 以及根据各自分词标准而提供的相应测试集的标准答案（icwb2-data/scripts/gold）．在icwb2-data/scripts目录下含有对分词进行自动评分的perl脚本score。</p>
 
-<p>我们在统一测试环境下，对若干流行分词软件和THULAC进行了测试，使用的模型为各分词软件自带模型。THULAC使用的是随软件提供的简单模型Model_1。评测结果如下：</p>
+<p>我们在统一测试环境下，对若干流行分词软件和THULAC进行了测试，使用的模型为各分词软件自带模型。THULAC使用的是随软件提供的简单模型Model_1。评测环境为 Intel Core i5 2.4 GHz 评测结果如下：</p>
 
 <p>msr_test（560KB）</p>
 
 <table>
 <thead>
 <tr>
-<th>Algorithm </th>
-<th> Time</th>
-<th> PRECISION </th>
-<th> RECALL</th>
+<th align="left">Algorithm </th>
+<th align="right"> Time</th>
+<th align="right"> Precision </th>
+<th align="right"> Recall</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>LTP（哈工大） </td>
-<td> 3.21s  </td>
-<td> 0.867 </td>
-<td> 0.896</td>
+<td align="left">LTP-3.2.0 </td>
+<td align="right"> 3.21s  </td>
+<td align="right"> 0.867 </td>
+<td align="right"> 0.896</td>
 </tr>
 <tr>
-<td>ICTCLAS </td>
-<td> 0.55s </td>
-<td> 0.869 </td>
-<td> 0.914</td>
+<td align="left">ICTCLAS(2015版) </td>
+<td align="right"> 0.55s </td>
+<td align="right"> 0.869 </td>
+<td align="right"> 0.914</td>
 </tr>
 <tr>
-<td>THULAC </td>
-<td> 0.62s  </td>
-<td> 0.877 </td>
-<td> 0.899</td>
+<td align="left">jieba(C++版)</td>
+<td align="right">0.26s</td>
+<td align="right">0.814</td>
+<td align="right">0.809</td>
+</tr>
+<tr>
+<td align="left">THULAC </td>
+<td align="right"> 0.62s  </td>
+<td align="right"> 0.877 </td>
+<td align="right"> 0.899</td>
 </tr>
 </tbody>
 </table>
 
 
-<p>PKU_test（510KB）</p>
+<p>pku_test（510KB）</p>
 
 <table>
 <thead>
 <tr>
-<th>Algorithm </th>
-<th> Time</th>
-<th> PRECISION </th>
-<th> RECALL</th>
+<th align="left">Algorithm </th>
+<th align="right"> Time</th>
+<th align="right"> Precision </th>
+<th align="right"> Recall</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>LTP（哈工大） </td>
-<td> 3.83s  </td>
-<td> 0.960 </td>
-<td> 0.947</td>
+<td align="left">LTP-3.2.0 </td>
+<td align="right"> 3.83s  </td>
+<td align="right"> 0.960 </td>
+<td align="right"> 0.947</td>
 </tr>
 <tr>
-<td>ICTCLAS </td>
-<td> 0.53s </td>
-<td> 0.939 </td>
-<td> 0.944</td>
+<td align="left">ICTCLAS(2015版) </td>
+<td align="right"> 0.53s </td>
+<td align="right"> 0.939 </td>
+<td align="right"> 0.944</td>
 </tr>
 <tr>
-<td>THULAC </td>
-<td> 0.51s  </td>
-<td> 0.944 </td>
-<td> 0.908</td>
+<td align="left">jieba(C++版)</td>
+<td align="right">0.23s</td>
+<td align="right">0.850</td>
+<td align="right">0.784</td>
+</tr>
+<tr>
+<td align="left">THULAC </td>
+<td align="right"> 0.51s  </td>
+<td align="right"> 0.944 </td>
+<td align="right"> 0.908</td>
 </tr>
 </tbody>
 </table>
@@ -445,32 +467,37 @@ make
 <table>
 <thead>
 <tr>
-<th>Algorithm </th>
-<th> Time </th>
-<th> SPEED</th>
+<th align="left">Algorithm </th>
+<th align="right"> Time </th>
+<th align="right"> Speed</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>LTP（哈工大） </td>
-<td> 348.624s  </td>
-<td> 149.80KB/s</td>
+<td align="left">LTP-3.2.0 </td>
+<td align="right"> 348.624s  </td>
+<td align="right"> 149.80KB/s</td>
 </tr>
 <tr>
-<td>ICTCLAS </td>
-<td> 106.461s </td>
-<td> 490.59KB/s</td>
+<td align="left">ICTCLAS(2015版) </td>
+<td align="right"> 106.461s </td>
+<td align="right"> 490.59KB/s</td>
 </tr>
 <tr>
-<td>THULAC </td>
-<td> 42.625s  </td>
-<td> 1221.05KB/s</td>
+<td align="left">jieba(C++版)</td>
+<td align="right">22.5583s</td>
+<td align="right">2314.89KB/s</td>
+</tr>
+<tr>
+<td align="left">THULAC </td>
+<td align="right"> 42.625s  </td>
+<td align="right"> 1221.05KB/s</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>词性解释</h2>
+<h2 id = "词性解释">词性解释</h2>
 
 <pre><code>a/形容词 c/连词 d/副词 e/语气词 f/方位词 g/助词
 h/前接成分 id/习语 j/简称 k/后接成分 l/处所词
@@ -479,7 +506,7 @@ ns/地名 nz/其它专名 o/拟声词 p/介词 q/量词
 r/代词 t/时间词 u/助词 v/动词 w/标点 x/其它
 </code></pre>
 
-<h2>THULAC模型介绍</h2>
+<h2 id = "THULAC模型介绍">THULAC模型介绍</h2>
 
 <ol>
 <li><p>我们随THULAC源代码附带了简单的分词模型Model_1，仅支持分词功能。该模型由北京大学人民日报分词语料库训练得到（数据大小约56M，原始分词语料请联系北京大学计算语言学研究所授权获取）。</p></li>
@@ -488,45 +515,45 @@ r/代词 t/时间词 u/助词 v/动词 w/标点 x/其它
 </ol>
 
 
-<h2>获取链接</h2>
+<h2 id = "获取链接">获取链接</h2>
 
 <table>
 <thead>
 <tr>
-<th>Source</th>
-<th>Description</th>
-<th>Size</th>
-<th>Data</th>
+<th align="left">Source </th>
+<th align="left"> Description </th>
+<th align="right"> Size</th>
+<th align="right">Data</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="/message">THULAC_c++_v1.tar.gz</a></td>
-<td>THULAC分词源代码</td>
-<td>46KB</td>
-<td>2016-01-11</td>
+<td align="left">THULAC_c++_v1.tar.gz</td>
+<td align="left"> THULAC分词源代码 </td>
+<td align="right"> 46KB</td>
+<td align="right">2016-01-11</td>
 </tr>
 <tr>
-<td><a href="/message">Models_1_2.zip</a></td>
-<td>THULAC模型，包括分词模型以及分词和词性标注联合模型</td>
-<td>53.1MB</td>
-<td>2016-01-11</td>
+<td align="left">Models_1_2.zip </td>
+<td align="left"> THULAC模型，包括分词模型以及分词和词性标注联合模型 </td>
+<td align="right"> 53.1MB</td>
+<td align="right">2016-01-11</td>
 </tr>
 <tr>
-<td><a href="/register">Models_3.zip</a></td>
-<td>THULAC模型，包括更复杂完善的分词和词性标注模型以及分词词表</td>
-<td>162.7MB</td>
-<td>2016-01-11</td>
+<td align="left">Models_3.zip</td>
+<td align="left">THULAC模型，包括更复杂完善的分词和词性标注模型以及分词词表</td>
+<td align="right">162.7MB</td>
+<td align="right">2016-01-11</td>
 </tr>
 </tbody>
 </table>
 
 
-<h2>注意事项</h2>
+<h2 id = "注意事项">注意事项</h2>
 
 <p>该工具目前仅处理UTF8编码中文文本，之后会逐渐增加支持其他编码的功能，敬请期待。</p>
 
-<h2>使用协议</h2>
+<h2 id = "开源协议">开源协议</h2>
 
 <ol>
 <li>THULAC面向国内外大学、研究所、企业以及个人研究者免费开放源。</li>
@@ -540,18 +567,25 @@ r/代词 t/时间词 u/助词 v/动词 w/标点 x/其它
 </ul>
 
 
-<p>同时，发信给thunlp@gmail.com，说明发表论文或申报成果的题目、出处等。</p></li>
+</li>
 </ol>
 
 
-<h2>作者</h2>
+<h2 id = "相关论文">相关论文</h2>
+
+<ul>
+<li>Zhongguo Li, Maosong Sun. Punctuation as Implicit Annotations for Chinese Word Segmentation. Computational Linguistics, vol. 35, no. 4, pp. 505-512, 2009.</li>
+</ul>
+
+
+<h2 id = "作者">作者</h2>
 
 <p>指导教师：Maosong Sun （孙茂松教授）</p>
 
-<p>贡献者：XinXiong Chen（陈新雄）, Zhipeng Guo（郭志芃）, Kaixu Zhang (张开旭), Zhiyuan Liu（刘知远）.</p>
+<p>贡献者：Xinxiong Chen（陈新雄）, Zhipeng Guo（郭志芃）, Kaixu Zhang (张开旭), Zhiyuan Liu（刘知远）.</p>
 
 <p>使用者如有任何问题、建议和意见，欢迎发邮件至 thunlp@gmail.com 。</p>
-<center>
+ <center>
     版权所有：清华大学自然语言处理与社会人文计算实验室<br>Copyright：Natural Language Processing and Computational Social Science Lab, Tsinghua University<br>
     <br>
 </center>

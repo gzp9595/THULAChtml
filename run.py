@@ -65,7 +65,7 @@ def get_fonts(name):
 def get_source(name):
     if('user' in session and session['user'] == 1):
         return send_from_directory(_source_dir, name)
-    return abort(404)
+    return redirect("message")
 
 
 @app.route('/')
