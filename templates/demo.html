@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<link href="css/GitHub2.css" rel="stylesheet">
+<script src="js/jquery-2.1.1.min.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<script>
+	$(document).ready(function(data){
+		 $("#test").click(function(){
+                $.post("/getResult", {"context":$("#sentence").val()},function(data){
+                	$("#output").empty();
+                	$("#output").append(data);
+                });
+          });
+	});
+</script>
+<title>THULAC：一个高效的中文词法分析工具包</title>
+
+</head>
+<body>
+<h1>THULAC：一个高效的中文词法分析工具包</h1>
+
+<p>欢迎使用THULAC中文分词工具包demo系统</p>
+
+	<div style="padding-left:20%;padding-right:20%;margin-top:20px;margin-left: auto; margin-right: auto;">
+
+            <textarea cols="50" rows="10" id="sentence" name="input_text" style="width:100%;BORDER-color:#000;">输入中文</textarea>
+            <br>
+    <div style="border-color:#ccc;border-top-style:solid;border-width:0px;text-align:center;">
+
+	<div style="cursor:pointer;
+	padding:5px;margin-top:5;margin-bottom:5;
+	color:rgb(240,65,85);
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+	" id = "test" name = "test">
+			<span>〖测试 Try〗</span>
+	</div>
+	</div>
+    <textarea cols="50" rows="10" id="output" name="output_text" readonly="readonly" style="width:100%;BORDER-width:0px;">在这里显示结果</textarea>
+    </div>
+
+
+<h2>词性解释</h2>
+
+<pre><code>a/形容词 c/连词 d/副词 e/语气词 f/方位词 g/助词
+h/前接成分 id/习语 j/简称 k/后接成分 l/处所词
+m/数词 mq/数量词 n/名词 ni/机构名 np/人名
+ns/地名 nz/其它专名 o/拟声词 p/介词 q/量词
+r/代词 t/时间词 u/助词 v/动词 w/标点 x/其它
+</code></pre>
+
+<center>
+    版权所有：清华大学自然语言处理与社会人文计算实验室<br>Copyright：Natural Language Processing and Computational Social Science Lab, Tsinghua University<br>
+    <br>
+</center>
+</body>
+</html>

@@ -8,6 +8,7 @@ import string
 import time
 import MySQLdb
 import ConfigParser
+import codecs
 
 app = Flask(__name__)
 server_dir = os.path.dirname(os.path.realpath(__file__))
@@ -121,6 +122,22 @@ def sendMessage():
             conn.close()
         return send_page("download.html")
 
+
+@app.route("/demo")
+def demo():
+    return send_page("demo.html")
+
+
+@app.route("/getResult", methods=['POST'])
+def getResult():
+    s = request.form['context']
+    s = s[:1000]
+    salt = ''.join(random.sample(string.ascii_letters + string.digits, 16))
+    f = codecs.open("temp/" + salt, "w", "utf-8")
+    f.write(s)
+    f.close()
+    ans = os.popen("./Algorithm/thulac -model_dir Algorithm/models <"+"temp/"+salt)
+    return ans.read()
 
 # @app.route("/getmarkdown")
 # def getMarkdown():
