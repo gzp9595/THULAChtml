@@ -374,7 +374,7 @@ make
 
 <h2 id = "代表分词软件的性能对比">代表分词软件的性能对比</h2>
 
-<p>我们选择LTP、ICTCLAS、结巴分词等国内代表分词软件与THULAC做性能比较。我们选择Windows作为测试环境，根据第二届国际汉语分词测评发布的国际中文分词测评标准，对不同软件进行了速度和准确率测试。</p>
+<p>我们选择<a href = "https://github.com/HIT-SCIR/ltp">LTP-3.2.0 </a>、<a href = "https://github.com/NLPIR-team/NLPIR/tree/master/NLPIR-ICTCLAS">ICTCLAS(2015版) </a>、<a href = "https://github.com/yanyiwu/cppjieba">jieba(C++版)</a>等国内代表分词软件与THULAC做性能比较。我们选择Windows作为测试环境，根据第二届国际汉语分词测评发布的国际中文分词测评标准，对不同软件进行了速度和准确率测试。</p>
 
 <p>在第二届国际汉语分词测评中，共有四家单位提供的测试语料（Academia Sinica、 City University 、Peking University 、Microsoft Research）, 在评测提供的资源<a href="http://www.sighan.org/bakeoff2005/">icwb2-data</a>中包含了来自这四家单位的训练集（training）、测试集（testing）, 以及根据各自分词标准而提供的相应测试集的标准答案（icwb2-data/scripts/gold）．在icwb2-data/scripts目录下含有对分词进行自动评分的perl脚本score。</p>
 
@@ -389,32 +389,37 @@ make
 <th align="right"> Time</th>
 <th align="right"> Precision </th>
 <th align="right"> Recall</th>
+<th align="right"> F-Measure</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">LTP-3.2.0 </td>
+<td align="left" >LTP-3.2.0</td>
 <td align="right"> 3.21s  </td>
 <td align="right"> 0.867 </td>
 <td align="right"> 0.896</td>
+<td align="right"> 0.881</td>
 </tr>
 <tr>
-<td align="left">ICTCLAS(2015版) </td>
+<td align="left">ICTCLAS(2015版)</td>
 <td align="right"> 0.55s </td>
 <td align="right"> 0.869 </td>
-<td align="right"> 0.914</td>
+<td align="right"> 0.914 </td>
+<td align="right"> 0.891 </td>
 </tr>
 <tr>
-<td align="left">jieba(C++版)</td>
+<td align="left" >jieba(C++版)</td>
 <td align="right">0.26s</td>
 <td align="right">0.814</td>
 <td align="right">0.809</td>
+<td align="right">0.811</td>
 </tr>
 <tr>
 <td align="left">THULAC </td>
 <td align="right"> 0.62s  </td>
 <td align="right"> 0.877 </td>
 <td align="right"> 0.899</td>
+<td align="right"> 0.888</td>
 </tr>
 </tbody>
 </table>
@@ -429,6 +434,7 @@ make
 <th align="right"> Time</th>
 <th align="right"> Precision </th>
 <th align="right"> Recall</th>
+<th align="right"> F-Measure</th>
 </tr>
 </thead>
 <tbody>
@@ -437,24 +443,28 @@ make
 <td align="right"> 3.83s  </td>
 <td align="right"> 0.960 </td>
 <td align="right"> 0.947</td>
+<td align="right"> 0.953</td>
 </tr>
 <tr>
 <td align="left">ICTCLAS(2015版) </td>
 <td align="right"> 0.53s </td>
 <td align="right"> 0.939 </td>
 <td align="right"> 0.944</td>
+<td align="right"> 0.941</td>
 </tr>
 <tr>
 <td align="left">jieba(C++版)</td>
 <td align="right">0.23s</td>
 <td align="right">0.850</td>
 <td align="right">0.784</td>
+<td align="right">0.816</td>
 </tr>
 <tr>
 <td align="left">THULAC </td>
 <td align="right"> 0.51s  </td>
 <td align="right"> 0.944 </td>
 <td align="right"> 0.908</td>
+<td align="right"> 0.926</td>
 </tr>
 </tbody>
 </table>
@@ -485,7 +495,7 @@ make
 </tr>
 <tr>
 <td align="left">jieba(C++版)</td>
-<td align="right">22.5583s</td>
+<td align="right">22.558s</td>
 <td align="right">2314.89KB/s</td>
 </tr>
 <tr>
@@ -528,21 +538,21 @@ r/代词 t/时间词 u/助词 v/动词 w/标点 x/其它
 </thead>
 <tbody>
 <tr>
-<td align="left">THULAC_c++_v1.tar.gz</td>
+<td align="left"><a href = "/message">THULAC_lite_c++_v1.tar.gz</a></td>
 <td align="left"> THULAC分词源代码 </td>
 <td align="right"> 46KB</td>
 <td align="right">2016-01-11</td>
 </tr>
 <tr>
-<td align="left">Models_1_2.zip </td>
+<td align="left"><a href = "/message">Models_1_2.zip </a></td>
 <td align="left"> THULAC模型，包括分词模型以及分词和词性标注联合模型 </td>
 <td align="right"> 53.1MB</td>
 <td align="right">2016-01-11</td>
 </tr>
 <tr>
-<td align="left">Models_3.zip</td>
+<td align="left"><a href = "/register">THULAC_pro_c++_v1.zip</a></td>
 <td align="left">THULAC模型，包括更复杂完善的分词和词性标注模型以及分词词表</td>
-<td align="right">162.7MB</td>
+<td align="right">162MB</td>
 <td align="right">2016-01-11</td>
 </tr>
 </tbody>
@@ -562,8 +572,8 @@ r/代词 t/时间词 u/助词 v/动词 w/标点 x/其它
 <li><p>如果您在THULAC基础上发表论文或取得科研成果，请您在发表论文和申报成果时声明“使用了清华大学THULAC”，并按如下格式引用：</p>
 
 <ul>
-<li><p><strong>中文： 孙茂松, 陈新雄, 郭志芃, 张开旭, 刘知远. THULAC：一个高效的中文词法分析工具包. 2016.</strong></p></li>
-<li><p><strong>英文： Maosong Sun, Xinxiong Chen, Zhipeng Guo, Kaixu Zhang, Zhiyuan Liu. THULAC: An Efficient Lexical Analyzer for Chinese. 2016.</strong></p></li>
+<li><p><strong>中文： 陈新雄, 张开旭, 郭志芃, 刘知远, 孙茂松. THULAC：一个高效的中文词法分析工具包. 2016.</strong></p></li>
+<li><p><strong>英文： Xinxiong Chen, Kaixu Zhang, Zhipeng Guo, Zhiyuan Liu, Maosong Sun. THULAC: An Efficient Lexical Analyzer for Chinese. 2016.</strong></p></li>
 </ul>
 
 
@@ -582,7 +592,7 @@ r/代词 t/时间词 u/助词 v/动词 w/标点 x/其它
 
 <p>指导教师：Maosong Sun （孙茂松教授）</p>
 
-<p>贡献者：Xinxiong Chen（陈新雄）, Zhipeng Guo（郭志芃）, Kaixu Zhang (张开旭), Zhiyuan Liu（刘知远）.</p>
+<p>贡献者：Xinxiong Chen（陈新雄）,  Kaixu Zhang (张开旭), Zhipeng Guo（郭志芃）,Zhiyuan Liu（刘知远）.</p>
 
 <p>使用者如有任何问题、建议和意见，欢迎发邮件至 thunlp@gmail.com 。</p>
  <center>
